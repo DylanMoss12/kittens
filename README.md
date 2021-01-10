@@ -1,0 +1,1 @@
+This is a project where I will set up a Rails app to be a data-producing API.
