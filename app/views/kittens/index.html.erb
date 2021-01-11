@@ -1,0 +1,17 @@
+<%= flash[:notice] %>
+
+<h2> All Kittens </h2>
+
+<% @kittens = Kitten.all %>
+
+<% @kittens.each do |kitten| %>
+  <%= link_to "#{ kitten.name }", kitten_path(kitten) %> <br>
+  Age: <%= kitten.age %>
+  Softness: <%= kitten.softness %>
+  Cuteness: <%= kitten.cuteness %> <br> <br>
+<% end %> 
+
+<br>
+
+<%= link_to "New Kitten", new_kitten_path %>
+

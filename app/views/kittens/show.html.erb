@@ -1,0 +1,14 @@
+<% @kitten = Kitten.find(params[:id]) %>
+
+<% if flash[:notice] %>
+  <%= flash[:notice]%> <br>
+<% end %>
+
+<strong> <%= @kitten.name %> </strong> <br>
+Age: <%= @kitten.age %>
+Softness: <%= @kitten.softness %>
+Cuteness: <%= @kitten.cuteness %> <br>
+
+<%= link_to "Edit", edit_kitten_path({:name => @kitten.name, :age => @kitten.age, :cuteness => @kitten.cuteness, :softness => @kitten.softness }) %>
+<%= link_to "Delete", kitten_path, :method => "delete" %>
+<%= link_to "Back", root_path %>
